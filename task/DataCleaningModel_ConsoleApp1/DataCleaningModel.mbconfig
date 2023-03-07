@@ -1,0 +1,267 @@
+﻿{
+  "Scenario": "Recommendation",
+  "DataSource": {
+    "Type": "TabularFile",
+    "Version": 1,
+    "FilePath": "C:\\Users\\ahmed\\OneDrive\\Desktop\\Uni\\Bachelor Thesis\\Bank Customers Churn.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "RowNumber",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "CustomerId",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Surname",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "CreditScore",
+        "ColumnPurpose": "Item",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Geography",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Gender",
+        "ColumnPurpose": "User",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Age",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Tenure",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Balance",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "NumOfProducts",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "HasCrCard",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "IsActiveMember",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "EstimatedSalary",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Exited",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "MatrixFactorization",
+        "Score": -8.9306962274679051,
+        "RuntimeInSeconds": 3.622,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4",
+          "e0": {
+            "OutputColumnName": "CreditScore",
+            "InputColumnName": "CreditScore",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e1": {
+            "OutputColumnName": "Gender",
+            "InputColumnName": "Gender",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e2": {
+            "LabelColumnName": "EstimatedSalary",
+            "MatrixColumnIndexColumnName": "Gender",
+            "MatrixRowIndexColumnName": "CreditScore",
+            "ApproximationRank": 122,
+            "LearningRate": 0.1060861636678786,
+            "NumberOfIterations": 2725,
+            "Quiet": true
+          },
+          "e3": {
+            "OutputColumnName": "Gender",
+            "InputColumnName": "Gender"
+          },
+          "e4": {
+            "OutputColumnName": "CreditScore",
+            "InputColumnName": "CreditScore"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "MatrixFactorization",
+        "Score": -9.0885848413180028,
+        "RuntimeInSeconds": 0.618,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4",
+          "e0": {
+            "OutputColumnName": "CreditScore",
+            "InputColumnName": "CreditScore",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e1": {
+            "OutputColumnName": "Gender",
+            "InputColumnName": "Gender",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e2": {
+            "LabelColumnName": "EstimatedSalary",
+            "MatrixColumnIndexColumnName": "Gender",
+            "MatrixRowIndexColumnName": "CreditScore",
+            "ApproximationRank": 11,
+            "LearningRate": 0.014734258048678289,
+            "NumberOfIterations": 465,
+            "Quiet": true
+          },
+          "e3": {
+            "OutputColumnName": "Gender",
+            "InputColumnName": "Gender"
+          },
+          "e4": {
+            "OutputColumnName": "CreditScore",
+            "InputColumnName": "CreditScore"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "MatrixFactorization",
+        "Score": -26.085449835046145,
+        "RuntimeInSeconds": 0.133,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4",
+          "e0": {
+            "OutputColumnName": "CreditScore",
+            "InputColumnName": "CreditScore",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e1": {
+            "OutputColumnName": "Gender",
+            "InputColumnName": "Gender",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e2": {
+            "LabelColumnName": "EstimatedSalary",
+            "MatrixColumnIndexColumnName": "Gender",
+            "MatrixRowIndexColumnName": "CreditScore",
+            "ApproximationRank": 10,
+            "LearningRate": 0.0020464342637999951,
+            "NumberOfIterations": 79,
+            "Quiet": true
+          },
+          "e3": {
+            "OutputColumnName": "Gender",
+            "InputColumnName": "Gender"
+          },
+          "e4": {
+            "OutputColumnName": "CreditScore",
+            "InputColumnName": "CreditScore"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "MapValueToKey",
+      "e1": "MapValueToKey",
+      "e2": "MatrixFactorization",
+      "e3": "MapKeyToValue",
+      "e4": "MapKeyToValue"
+    },
+    "Schema": "e0 * e1 * e2 * e3 * e4",
+    "MetricName": "RSquared",
+    "ModelFilePath": "C:\\Users\\ahmed\\OneDrive\\Desktop\\Internship Tasks\\task\\task\\DataCleaningModel.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 4,
+  "TrainingOption": {
+    "Version": 0,
+    "Type": "RecommendationTrainingOption",
+    "TrainingTime": 10,
+    "LabelColumn": "EstimatedSalary",
+    "UserIdColumn": "Gender",
+    "ItemIdColumn": "CreditScore",
+    "Seed": 0
+  }
+}
